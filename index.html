@@ -6,13 +6,66 @@
 		<title>TPE Nucléaire</title>
 		<style>
 		</style>
+
+    <script src="lib/ruffle/ruffle.js"></script>
 	</head>
 
 	<body>
+    
+    <div id="container"></div>
+    <select id="examples">
+      <option value='pages/page1.swf'>1</option>
+      <option value='pages/page2.swf'>2</option>
+      <option value='pages/page3.swf'>3</option>
+      <option value='pages/page4.swf'>4</option>
+      <option value='pages/page5.swf'>5</option>
+      <option value='pages/page6.swf'>6</option>
+      <option value='pages/page7.swf'>7</option>
+      <option value='pages/page8.swf'>8</option>
+      <option value='pages/page9.swf'>9</option>
+      <option value='pages/page10.swf'>10</option>
+      <option value='pages/page11.swf'>11</option>
+      <option value='pages/page12.swf'>12</option>
+      <option value='pages/page13.swf'>13</option>
+      <option value='pages/page14.swf'>14</option>
+      <option value='pages/page15.swf'>15</option>
+      <option value='pages/page16.swf'>16</option>
+      <option value='pages/page17.swf'>17</option>
+      <option value='pages/page18.swf'>18</option>
+      <option value='pages/page19.swf'>19</option>
+      <option value='pages/page20.swf'>20</option>
+      <option value='pages/page21.swf'>21</option>
+      <option value='pages/page22.swf'>22</option>
+      <option value='pages/page23.swf'>23</option>
+      <option value='pages/page24.swf'>24</option>
+      <option value='pages/page25.swf'>25</option>
+      <option value='pages/page26.swf'>26</option>
+      <option value='pages/page27.swf'>27</option>
+      <option value='pages/page28.swf'>28</option>
+    </select>
+
 		<ul>
-			<li><a href="https://www.youtube.com/watch?v=KQ6wHNpnm6k&list=PLBF471ABDA0ABD278">Videos</a></li>
-			<li><a href="game/">Game</a></li>
-			<li><a href="pages/">Pages</a></li>
+			<li><a href="https://www.youtube.com/watch?v=KQ6wHNpnm6k&list=PLBF471ABDA0ABD278">Vidéos (Youtube)</a></li>
+			<li><a href="game/">Visite virtuelle</a></li>
 		</ul>
+
+    <script>
+      let player;
+
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+          const ruffle = window.RufflePlayer.newest();
+          player = ruffle.createPlayer();
+          const container = document.getElementById("container");
+          container.appendChild(player);
+          player.load("pages/page1.swf");
+      });
+
+      const pages = document.getElementById('examples');
+      pages.addEventListener('change', (e) => {
+        player.load(e.target.value);
+      });
+
+    </script>
 	</body>
 </html>

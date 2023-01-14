@@ -13,7 +13,7 @@
 	<body>
     
     <div id="container"></div>
-    <select id="examples">
+    <select id="pages">
       <option value='pages/page1.swf'>1</option>
       <option value='pages/page2.swf'>2</option>
       <option value='pages/page3.swf'>3</option>
@@ -43,6 +43,7 @@
       <option value='pages/page27.swf'>27</option>
       <option value='pages/page28.swf'>28</option>
     </select>
+    <button id="next">Suivant</button>
 
 		<ul>
 			<li><a href="couv.jpg">Couverture</a></li>
@@ -52,6 +53,7 @@
 
     <script>
       let player;
+      const pages = document.getElementById('pages');
 
       window.RufflePlayer = window.RufflePlayer || {};
       window.addEventListener("load", (event) => {
@@ -62,9 +64,17 @@
           player.load("pages/page1.swf");
       });
 
-      const pages = document.getElementById('examples');
       pages.addEventListener('change', (e) => {
         player.load(e.target.value);
+      });
+
+      // Next button
+      document.getElementById('next').addEventListener('click', () => {
+        const index = pages.selectedIndex;
+        if (index < pages.options.length - 1) {
+          pages.selectedIndex = index + 1;
+          pages.dispatchEvent(new Event('change'));
+        }
       });
 
     </script>

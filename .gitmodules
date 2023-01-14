@@ -1,0 +1,3 @@
+[submodule "game/hl-engine-js"]
+	path = game/hl-engine-js
+	url = https://github.com/steren/hl-engine-js.git

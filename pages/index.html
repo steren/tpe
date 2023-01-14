@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<title>TPE Nucléaire</title>
+		<style>
+		</style>
+
+    <script src="ruffle/ruffle.js"></script>
+	</head>
+
+	<body>
+    
+    <div id="container"></div>
+    <select id="examples">
+      <option value='page1.swf'>1</option>
+      <option value='page2.swf'>2</option>
+      <option value='page3.swf'>3</option>
+      <option value='page4.swf'>4</option>
+      <option value='page5.swf'>5</option>
+      <option value='page6.swf'>6</option>
+      <option value='page7.swf'>7</option>
+      <option value='page8.swf'>8</option>
+      <option value='page9.swf'>9</option>
+      <option value='page10.swf'>10</option>
+      <option value='page11.swf'>11</option>
+      <option value='page12.swf'>12</option>
+      <option value='page13.swf'>13</option>
+      <option value='page14.swf'>14</option>
+      <option value='page15.swf'>15</option>
+      <option value='page16.swf'>16</option>
+      <option value='page17.swf'>17</option>
+      <option value='page18.swf'>18</option>
+      <option value='page19.swf'>19</option>
+      <option value='page20.swf'>20</option>
+      <option value='page21.swf'>21</option>
+      <option value='page22.swf'>22</option>
+      <option value='page23.swf'>23</option>
+      <option value='page24.swf'>24</option>
+      <option value='page25.swf'>25</option>
+      <option value='page26.swf'>26</option>
+      <option value='page27.swf'>27</option>
+      <option value='page28.swf'>28</option>
+    </select>
+
+    <script>
+      let player;
+
+      window.RufflePlayer = window.RufflePlayer || {};
+      window.addEventListener("load", (event) => {
+          const ruffle = window.RufflePlayer.newest();
+          player = ruffle.createPlayer();
+          const container = document.getElementById("container");
+          container.appendChild(player);
+          player.load("page1.swf");
+      });
+
+      const pages = document.getElementById('examples');
+      pages.addEventListener('change', (e) => {
+        player.load(e.target.value);
+      });
+
+    </script>
+	</body>
+</html>

@@ -5,6 +5,18 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 		<title>TPE Nucléaire</title>
 		<style>
+      body {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        font-size: 1.25em;
+        font-family: sans-serif;
+        background-color: #1d6d86;
+        color: white;
+      }
+      a, a:visited {
+        color: white;
+      }
 		</style>
 
     <script src="lib/ruffle/ruffle.js"></script>
@@ -45,10 +57,11 @@
     </select>
     <button id="next">Suivant</button>
 
-		<ul>
-			<li><a href="couv.jpg">Couverture</a></li>
-      <li><a href="https://www.youtube.com/watch?v=KQ6wHNpnm6k&list=PLBF471ABDA0ABD278">Vidéos (Youtube)</a></li>
-			<li><a href="game/">Visite virtuelle</a> (<a href="game/screenshots/">screenshots</a>)</li>
+    <p>
+		  <a href="couv.jpg">Couverture</a><br>
+      <a href="https://www.youtube.com/watch?v=KQ6wHNpnm6k&list=PLBF471ABDA0ABD278">Vidéos</a><br>
+		  <a href="game/">Visite virtuelle</a> (<a href="game/screenshots/">screenshots</a>)<br>
+    </p>
 		</ul>
 
     <script>
@@ -62,6 +75,8 @@
           const container = document.getElementById("container");
           container.appendChild(player);
           player.load("pages/page1.swf");
+          player.style.width = "1200px";
+          player.style.height = "1033px";
       });
 
       pages.addEventListener('change', (e) => {

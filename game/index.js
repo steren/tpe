@@ -1,6 +1,8 @@
+import {init, start, fullscreen} from './hl-engine-js/lib/hl-engine.js';
+
 let zipArrayBuffer;
 
-HLEngine.init({
+init({
   canvas: document.getElementById('canvas'),
   location: 'hl-engine-js/lib'
 });
@@ -14,9 +16,8 @@ fetch("tpe.zip")
   });
 
 document.getElementById('start').onclick = function() {
-  HLEngine.start({
+  start({
     zip: zipArrayBuffer,
-    filesystem: "RAM",
     fullscreen: true,
   });
 };

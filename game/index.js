@@ -13,11 +13,16 @@ fetch("tpe.zip")
     zipArrayBuffer = arrayBuffer;
     // enable Start button
     document.getElementById('start').disabled = false;
+    document.getElementById('maps').disabled = false;
   });
 
 document.getElementById('start').onclick = function() {
-  start({
+  const options = {
     zip: zipArrayBuffer,
     fullscreen: true,
-  });
+  }
+  if(document.getElementById('maps').value) {
+    options.map = document.getElementById('maps').value;
+  }
+  start(options);
 };

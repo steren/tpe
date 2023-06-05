@@ -23,7 +23,7 @@
 				padding-right: 0;
 			}
 
-		  #canvas, #start { 
+		  #canvas, #start, #maps { 
 				margin-left: auto; 
 				margin-right: auto; 
 				display: block;
@@ -35,6 +35,14 @@
 	<body>
 		<canvas class="render" id="canvas" oncontextmenu="event.preventDefault()"></canvas>
 
+
+		<select id="maps">
+			<option value="" selected>Main menu</option>
+			<option value="t0a0">Map 1</option>
+			<option value="TPETR2">Map 2</option>
+			<option value="TPETR3">Map 3</option>
+			<option value="TPETR4">Map 4</option>
+		</select>
 		<input type="button" id="start" value="Launch" disabled/>
 
 		<script type='text/javascript' src='hl-engine-js/browserfs.min.js'></script>
